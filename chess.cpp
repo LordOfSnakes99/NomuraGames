@@ -263,6 +263,8 @@ public:
         /*Define a nova posição do bispo*/
         SetPosX(i);
         SetPosY(j);
+        
+        mapa[i][j]=BISPO;
 
         return 1;
     }
