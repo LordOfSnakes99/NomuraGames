@@ -112,11 +112,19 @@ int movimento(int a, int b, int c, int d){
             }
             if (team == 1){
                 if (mapa[c][d] < 0){
+                    SetPosX(c);
+                    SetPosY(d);
+                    mapa[a][b] = 0;
+                    mapa[c][d] = type;
                     return 1;
                 }
             }
             else{
                 if (mapa[c][d] > 0){
+                    SetPosX(c);
+                    SetPosY(d);
+                    mapa[a][b] = 0;
+                    mapa[c][d] = type;
                     return 1;
                 }
             }
@@ -129,11 +137,19 @@ int movimento(int a, int b, int c, int d){
             }
             if (team == 1){
                 if (mapa[c][d] < 0){
+                    SetPosX(c);
+                    SetPosY(d);
+                    mapa[a][b] = 0;
+                    mapa[c][d] = type;
                     return 1;
                 }
             }
             else{
                 if (mapa[c][d] > 0){
+                    SetPosX(c);
+                    SetPosY(d);
+                    mapa[a][b] = 0;
+                    mapa[c][d] = type;
                     return 1;
                 }
             }
@@ -148,11 +164,19 @@ int movimento(int a, int b, int c, int d){
             }
             if (team == 1){
                 if (mapa[c][d] < 0){
+                    SetPosX(c);
+                    SetPosY(d);
+                    mapa[a][b] = 0;
+                    mapa[c][d] = type;
                     return 1;
                 }
             }
             else{
                 if (mapa[c][d] > 0){
+                    SetPosX(c);
+                    SetPosY(d);
+                    mapa[a][b] = 0;
+                    mapa[c][d] = type;
                     return 1;
                 }
             }
@@ -165,11 +189,19 @@ int movimento(int a, int b, int c, int d){
             }
             if (team == 1){
                 if (mapa[c][d] < 0){
+                    SetPosX(c);
+                    SetPosY(d);
+                    mapa[a][b] = 0;
+                    mapa[c][d] = type;
                     return 1;
                 }
             }
             else{
                 if (mapa[c][d] > 0){
+                    SetPosX(c);
+                    SetPosY(d);
+                    mapa[a][b] = 0;
+                    mapa[c][d] = type;
                     return 1;
                 }
             }
