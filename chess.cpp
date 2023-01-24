@@ -95,12 +95,93 @@ int Movimento(int a, int b, int c, int d){
         return 0;
     }
 }
+}
 
+class rook: piece{
+private:
+    int i;
+public:
 
-
+int movimento(int a, int b, int c, int d){
+    if (a == c){
+        if (d > b){
+            for (i=b; i<d;i++){
+                if (mapa[i][a] != 0){
+                    return 0;
+                }
+            }
+            if (team == 1){
+                if (mapa[c][d] < 0){
+                    return 1;
+                }
+            }
+            else{
+                if (mapa[c][d] > 0){
+                    return 1;
+                }
+            }
+        }
+        else{
+            for (i=b; i>d;i--){
+                if (mapa[i][a] != 0){
+                    return 0;
+                }
+            }
+            if (team == 1){
+                if (mapa[c][d] < 0){
+                    return 1;
+                }
+            }
+            else{
+                if (mapa[c][d] > 0){
+                    return 1;
+                }
+            }
+        }
+    }
+    else{
+        if (c > a){
+            for (i=a; i<c; i++){
+                if (mapa[b][i] != 0){
+                    return 0;
+                }
+            }
+            if (team == 1){
+                if (mapa[c][d] < 0){
+                    return 1;
+                }
+            }
+            else{
+                if (mapa[c][d] > 0){
+                    return 1;
+                }
+            }
+        }
+        else{
+            for (i=1; i>c; i--){
+                if (mapa[b][i] != 0){
+                    return 0;
+                }
+            }
+            if (team == 1){
+                if (mapa[c][d] < 0){
+                    return 1;
+                }
+            }
+            else{
+                if (mapa[c][d] > 0){
+                    return 1;
+                }
+            }
+        }
+    }
+    return 0;
+}
 }
 
 int main(){
+
+}
 
 
 
