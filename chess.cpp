@@ -179,6 +179,98 @@ int movimento(int a, int b, int c, int d){
 }
 }
 
+
+
+
+class bishop: public piece{
+private:
+    int x;
+    int y;
+    int type;
+    int team;
+public:
+
+    /*Qual número representa o tipo bishop????*/
+
+    bishop(int a, int b, int type, int i, int team):piece(a,b,type,i){
+        this->team=team;
+    };
+
+    /*i e j são as posições que o bispo ocupará*/
+    int move(int i, int j, int mapa[8][8]){
+
+        int k=GetPosX();
+        int l=GetPosY();
+
+
+        /*essas variáveis m e n ajudarão a definir a direção do movimento*/
+        int m = i - k;
+        int n = j - l;
+
+        /*Se m e n forem maiores que 0 significa que a direção é SUDESTE*/
+        if((m>0) && (n>0)){
+
+            for(;m==0 && n==0;m--,n--){
+                k++;
+                l++;
+                /*verifica se aquela posição está disponível para mover*/
+                if(mapa[k][l]!=0){
+                    return 0;
+                }
+            }
+        
+        /*Se n>0, logo direção NORDESTE*/
+        } else if(n>0){
+
+            for(;m==0 && n==0;m--,n--){
+                k--;
+                l++;
+                if(mapa[k][l]!=0){
+                    return 0;
+                }
+            }
+
+        /*Se m<0, logo direção NOROESTE*/
+        } else if(m<0){
+
+            for(;m==0 && n==0;m--,n--){
+                k--;
+                l--;
+                if(mapa[k][l]!=0){
+                    return 0;
+                }
+            }
+
+        /*Direção SUDOESTE*/
+        } else{
+
+            for(;m==0 && n==0;m--,n--){
+                k++;
+                l--;
+                if(mapa[k][l]!=0){
+                    return 0;
+                }
+            }
+
+        }
+
+        k=GetPosX();
+        l=GetPosY();
+        
+        /*Libera a posição anterior no tabuleiro*/
+        mapa[k][l]=0;
+
+        /*Define a nova posição do bispo*/
+        SetPosX(i);
+        SetPosY(j);
+
+        return 1;
+    }
+
+    
+
+};
+
 int main(){
 
 }
