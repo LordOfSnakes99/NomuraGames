@@ -3,6 +3,7 @@
 using namespace std;
 
 
+
 class piece{
 protected:
     int team;
@@ -11,11 +12,11 @@ protected:
     int y;
 
 public:
-    piece(int a, int b, int type, int i){
+    piece(int a, int b, int type, int team){
         SetPosX(a);
         SetPosY(b);
         SetType(type);
-        SetTeam(i);
+        SetTeam(team);
     }
     void SetType(int i){
         type = c;
@@ -43,9 +44,9 @@ private:
 public:
 int mapa[10][10];
 tabuleiro(){
-
-   
-    for(i=0)
+    for(i=1;i<=8;i++){
+        mapa[]
+    }    
 }
 
 void Imprimir(){
@@ -61,8 +62,11 @@ void Imprimir(){
 
 class pawn: piece{
 public:
-
-int Movimento(int a, int b, int c, int d){
+pawn():piece(int a, int b, int type, int team){
+}
+int Movimento( int c, int d){
+    a = x;   /*  MOSTRAR PARA OUTROS */
+    b = y;
     if((a==c-1 || a==c+1) && d == b+1){
         if(team==1){
             if(mapa[c][d]<0){
@@ -97,11 +101,14 @@ int Movimento(int a, int b, int c, int d){
 }
 }
 
+
+
 class rook: piece{
 private:
     int i;
 public:
-
+rook():piece(int a, int b, int type, int team){
+}
 int movimento(int a, int b, int c, int d){
     if (a == c){
         if (d > b){
@@ -224,8 +231,7 @@ public:
 
     /*Qual número representa o tipo bishop????*/
 
-    bishop(int a, int b, int type, int i, int team):piece(a,b,type,i){
-        this->team=team;
+    bishop(int a, int b, int type, int team):piece(a,b,type,team){
     };
 
     /*i e j são as posições que o bispo ocupará*/
@@ -300,12 +306,50 @@ public:
 
         return 1;
     }
-
-    
-
 };
 
 int main(){
+int a, b, c, d, aux, turno=0;
+pawn P;
+bishop B;
+rook R;
+queen Q;
+king K;
+cavalo C;
+tabuleiro mapa;
+
+
+while(!acabou){
+    turno = turno+1;
+    aux=1;
+    while(aux==1){
+        cout<< "coordenadas da peça: ";
+        cin>> a;
+        cin>> b;
+        if(a<1||a>8||b<1||b>8){
+            cout<< "voce é burro? ";
+        }
+        else{
+            aux=0;
+        }
+    }
+        cout<< "\ncoordenadas novas: ";
+        cin>> c;
+        cin>> d;
+    }
+    if(mapa[a][b] == 1){
+        P.SetPosX(a);
+        P.SetPosY(b);
+        P.SetTeam(1);
+        if(!P.Movimento(c, d)){  /*CHAMAR O !MOVIMENTO RODA A FUNCAO EM SI??*/
+            cout<< "movimento invalido";
+            turno = turno + 1; /*FEITO PRA GARANTIR QUE O TURNO SEJA REPETIDO (DEPENDENDO DO TURNO NAO PODEMOS MOVER CERTAS PECAS)*/
+        }
+    }
+    if(mapa[a][b] == -1){
+
+    }
+/*....*/
 
 }
 
